@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Love Message</title>
+<style>
+  body {
+    background: radial-gradient(circle at center, #1a001a, #000);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  h1 {
+    color: #ff4d88;
+    font-size: 2.5em;
+    text-shadow: 0 0 20px #ff6699;
+    margin-bottom: 30px;
+  }
+
+  #message {
+    max-width: 700px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.5s ease;
+    display: none;
+  }
+
+  #message.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .glow {
+    color: #ff6699;
+    text-shadow: 0 0 15px #ff3366, 0 0 25px #ff6699;
+  }
+
+  .btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ff3366;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 20px #ff6699;
+  }
+
+  .btn:hover {
+    background: #ff6699;
+    box-shadow: 0 0 25px #ff99cc;
+  }
+
+  .fade-in {
+    animation: fadeIn 3s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+  <h1>My Heart Speaks… 💞</h1>
+
+  <button class="btn" onclick="showMessage()">❤️ Read Me</button>
+
+  <p id="message">
+    From the moment our paths crossed, something deep within me changed.  
+    You became more than just a thought . you became the pulse of my days,  
+    the calm in my storms, and the warmth that lives quietly in my soul.  
+    I’ve loved you in silence, in words, in glances, in everything I am.  
+    My heart doesn’t just beat  it whispers your name with every breath.  
+    <br><br>
+    You are my forever, my peace, my chaos, and my reason.  
+    No matter the distance or time, my love for you remains endless.  
+    <span class="glow">I am yours — completely, deeply, and truly. 💖</span>
+  </p>
+
+  <a href="love.html"><button class="btn">💓 Back to Animation</button></a>
+
+  <!-- Hidden audio -->
+  <audio id="bgMusic" loop>
+    <source src="piano.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById('message');
+      const music = document.getElementById('bgMusic');
+      msg.classList.add('show');
+      music.play(); // plays when message is shown
+    }
+  </script>
+
+</body>
+</html>
